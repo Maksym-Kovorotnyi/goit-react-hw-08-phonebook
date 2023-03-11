@@ -1,8 +1,8 @@
 import { ContactItem } from '../ContactItem/ContactItem';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchContacts } from 'redux/contacts/contactsThunk';
-import { selectFilteredContacts } from 'redux/contacts/contactsSelector';
+import { fetchContacts } from 'redux/Contacts/contactsThunk';
+import { selectFilteredContacts } from 'redux/Contacts/contactsSelector';
 
 
 export const ContactsList = () => {
@@ -15,7 +15,7 @@ export const ContactsList = () => {
     }, [dispatch]);
     
   
-    console.log("ContactsList ~ filteredContacts:", filteredContacts)
+   
    return <>
         <ul>
             {filteredContacts.map(({ id, name, phone }) =>
