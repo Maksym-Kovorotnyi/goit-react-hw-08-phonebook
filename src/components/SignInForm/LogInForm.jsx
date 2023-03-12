@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { logInUser } from 'redux/Auth/authThunk';
+import { logInUser } from 'redux/auth/authThunk';
 import css from './logInForm.module.css'
 
 

@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 
-import { fetchContacts } from 'redux/Contacts/contactsThunk';
+import { fetchContacts } from 'redux/contacts/contactsThunk';
 
 
 export const ContactsList = () => {

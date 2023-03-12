@@ -1,7 +1,7 @@
 import css from './Form.module.css';
 import { useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/Contacts/contactsThunk';
+import { addContact } from 'redux/contacts/contactsThunk';
 
 
 
