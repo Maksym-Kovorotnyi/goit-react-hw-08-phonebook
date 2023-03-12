@@ -2,14 +2,17 @@
 import { AuthForm } from "components/AuthForm/AuthForm"
 import {Navigation} from "components/Navigation/Navigation"
 import { UserMenu } from "components/UserMenu/UserMenu"
+import { useSelector } from "react-redux"
 import { Outlet } from "react-router-dom"
-import { selectIsLoggedIn } from "redux/Auth/authSelector"
+import css from './Layout.module.css'
+
 
 export const Layout = () => {
+const isLogged = useSelector(state => state.auth.isLoggedIn)
     return (<>
-      <div>
+      <div className={css.container}>
         <Navigation />
-            {selectIsLoggedIn ? <AuthForm /> : <UserMenu />}
+            {isLogged ? <UserMenu /> : <AuthForm />}
             <Outlet/>
         </div>
     </>)

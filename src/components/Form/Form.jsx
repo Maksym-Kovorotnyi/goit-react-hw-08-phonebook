@@ -1,14 +1,15 @@
 import css from './Form.module.css';
 import { useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { nanoid } from '@reduxjs/toolkit';
 import { addContact } from 'redux/Contacts/contactsThunk';
+
+
 
 export const Form = ()=> {
   const [name, setName] = useState('');
   const [number, setNumber]= useState('')
 
-  const contacts = useSelector(state => state.contacts.items);
+const contacts = useSelector(state => state.contacts.contacts.items);
   
   const dispatch = useDispatch();
  
@@ -33,20 +34,15 @@ const handleChange = (e) => {
     const contact = {
       name: name,
       number: number,
-      id: nanoid(),
     };
 
     if (contacts.find(contact => contact.name === name)) {
       return alert(`${name} is already in contacts.`);
     } else {
+      console.log(contact);
       dispatch(addContact(contact));
     }
-
-    setName('');
-    setNumber('');
   }
-
-  console.log(contacts);
     return (<>
   < form className={css.form} onSubmit={handleSubmit} >
 <label className={css.label} htmlFor="name">Name</label>

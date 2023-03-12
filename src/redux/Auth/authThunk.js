@@ -14,38 +14,38 @@ const token = {
 
 export const registerUser = createAsyncThunk(
   'auth/register',
-  async (credential, thunkAPI) => {
+  async (credential) => {
     try {
       const { data } = await axios.post('/users/signup', credential);
       token.set(data.token);
       return data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      return console.log('error');
     }
   }
 );
 
 export const logInUser = createAsyncThunk(
   'auth/login',
-  async (credential, thunkAPI) => {
+  async (credential) => {
     try {
       const { data } = await axios.post('/users/login', credential);
       token.set(data.token);
       return data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      return console.log('error');
     }
   }
 );
 
 export const logOutUser = createAsyncThunk(
   'auth/logout',
-  async (_, thunkAPI) => {
+  async () => {
     try {
       await axios.post('/users/logout');
       token.unset();
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      return console.log('error');
     }
   }
 );

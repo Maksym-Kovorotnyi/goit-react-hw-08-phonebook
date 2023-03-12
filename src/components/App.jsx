@@ -8,13 +8,16 @@ import { fetchCurrentUser } from 'redux/Auth/authThunk';
 import { Layout } from './Layout/Layout';
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 import { PublicRoute } from './PublicRoute/PublicRoute';
-import { LogInForm } from './SignInForm/LogInForm';
+import { LogInForm } from './logInForm/LogInForm';
+
+
 
 
 
 
 export const App = () => {
   const dispatch = useDispatch();
+
 
   useEffect(() => {
     dispatch(fetchCurrentUser());
@@ -26,21 +29,27 @@ export const App = () => {
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route
-          path="/contacts"
-          element={<ContactsPage/>}
-        />
-        <Route
           path="/login"
-          element={<LogInForm />}
+          element={
+              <PublicRoute>
+                <LogInForm />
+              </PublicRoute>
+            }
         />
         <Route
           path="/register"
-          element={<RegistrationPage />}
+          element={
+              <PublicRoute>
+                <RegistrationPage />
+              </PublicRoute>
+            }
           />
            <Route
             path="/contacts"
-            element={
-              <ContactsPage/>
+             element={
+              <PrivateRoute>
+                <ContactsPage />
+              </PrivateRoute>
             }
           />
         <Route path="*" element={<HomePage />} />

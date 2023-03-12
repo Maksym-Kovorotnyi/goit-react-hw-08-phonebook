@@ -1,17 +1,19 @@
-import { useSelector } from "react-redux";
+import css from './Navigation.module.css'
 import { Link } from "react-router-dom";
-import {selectIsLoggedIn} from '../../redux/Auth/authSelector'
+
 
 export const Navigation = () => {
-  // const isLogIn = useSelector(selectIsLoggedIn);
+
   return (
     <>
-      <Link to="/">
+      <div className={css.navContainer}>
+      <Link className={css.navLink} to="/">
         Home
       </Link>
-        <Link to="/contacts">
+        <Link  className={css.navLink} to="/contacts">
           Phonebook
         </Link>
+        </div>
       </>
    
   );
