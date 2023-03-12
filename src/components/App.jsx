@@ -8,7 +8,7 @@ import { fetchCurrentUser } from 'redux/Auth/authThunk';
 import { Layout } from './Layout/Layout';
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 import { PublicRoute } from './PublicRoute/PublicRoute';
-import { LogInForm } from './logInForm/LogInForm';
+import { LogInForm } from './SignInForm/LogInForm';
 
 
 
