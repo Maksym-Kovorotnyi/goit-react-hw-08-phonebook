@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { registerUser } from 'redux/author/authThunk';
+import { registerUser } from 'redux/auth/authThunk';
 import css from './RegistrationForm.module.css'
 
 
