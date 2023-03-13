@@ -11,7 +11,7 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import { authReducer } from './auth/authSlice';
+import { authReducer } from './author/authSlice';
 
 import { contactsReducer } from './contacts/contactsSlice';
 

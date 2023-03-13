@@ -4,7 +4,7 @@ import { RegistrationPage } from 'Pages/registrationPage';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
-import { fetchCurrentUser } from 'redux/auth/authThunk';
+import { fetchCurrentUser } from 'redux/author/authThunk';
 import { Layout } from './Layout/Layout';
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 import { PublicRoute } from './PublicRoute/PublicRoute';
