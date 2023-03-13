@@ -10,9 +10,6 @@ export const Filter = () => {
      const onChangeFilter = (filter) => { 
         dispatch(filterContacts(filter));
     }
-
-
-   console.log(filter);
     return <>
         <label className={css.label} htmlFor="text">Find contact by name</label>
         <input
